@@ -1,0 +1,2 @@
+<input type="text" #message (keyup.enter)="onSent($event, message)" />
+<button (click)="onSent($event, message)">Send</button>

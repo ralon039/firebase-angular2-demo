@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<header>
+  <h3>flex-chat</h3>
+  <input type="text" #limit (change)="changeLimit(limit.value)">
+</header>
+
+<div class="chat-container">
+  
+  <flexchat-message
+    *ngFor="let message of messages | async"
+    [message]="message">
+  </flexchat-message>
+  
+</div>
+
+<input-bar (sent)="addMessage($event)"></input-bar>
